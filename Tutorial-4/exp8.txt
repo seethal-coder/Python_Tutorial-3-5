@@ -1,0 +1,24 @@
+class Book:
+    def __init__(self):
+        self.title = Nil
+        self.author = Nil
+        self.cost = Nil
+
+    def get_details(self, title, author, cost):
+        self.title = title
+        self.author = author
+        self.cost = cost
+
+    def print_details(self):
+        print(f"Title: {self.title}")
+        print(f"Author: {self.author}")
+        print(f"Cost: {self.cost}")
+
+# Creating object of Book class
+book1 = Book()
+
+# Assigning values to book
+book1.get_details("Atomic Habits, "James Clear, 999)
+
+# Display book's details
+book1.print_details()

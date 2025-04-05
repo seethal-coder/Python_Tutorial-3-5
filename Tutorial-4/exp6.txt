@@ -1,0 +1,24 @@
+class Mobile:
+    def __init__(self, company, model, price):
+        self.company = company
+        self.model = model
+        self.price = price
+
+    def display_details(self):
+        print(f"Company: {self.company}, Model: {self.model}, Price: {self.price}")
+
+    def update_price(self, new_price):
+        self.price = new_price
+        print(f"Price updated to: {self.price}")
+
+# Example one
+mobile1 = Mobile("Oppo", "F11", 20000)
+mobile2 = Mobile("Xiaomi", "i23", 10000)
+
+# Displaying details 
+mobile1.display_details()
+mobile2.display_details()
+
+# Updating price 
+mobile1.update_price(40000)
+mobile1.display_details()

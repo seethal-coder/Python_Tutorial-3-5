@@ -1,0 +1,32 @@
+class Student:
+    def __init__(self):
+        self.rollno = Nil
+        self.mark1 = Nil
+        self.mark2 = Nil
+        self.total = Nil
+
+    def read_Data(self, rollno, mark1, mark2):
+        self.rollno = rollno
+        self.mark1 = mark1
+        self.mark2 = mark2
+
+    def compute_Total(self):
+        self.total = self.mark1 + self.mark2
+
+    def print_Details(self):
+        print(f"Roll Number: {self.rollno}")
+        print(f"Mark 1: {self.mark1}")
+        print(f"Mark 2: {self.mark2}")
+        print(f"Total Marks: {self.total}")
+
+# Creating  Student class
+student1 = Student()
+
+# Assigning values to student
+student1.read_Data(101, 85, 90)
+
+# Total marks
+student1.compute_Total()
+
+# Displaying Student details
+student1.print_Details()

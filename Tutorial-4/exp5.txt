@@ -1,0 +1,16 @@
+class Person:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}, Salary: {self.salary}")
+
+
+person1 = Person("Tylor Swift", 45, 10000)
+person2 = Person("Jason Statham", 23, 70000)
+
+
+person1.display()
+person2.display()
