@@ -1,0 +1,9 @@
+import pandas as pd
+
+data = ['Brinjal', 'Carrot', 'Cucumber, 'Tomoto', 'Spinach']
+
+df = pd.DataFrame(data, columns=['Vegs'])
+
+df.index = ['A', 'B', 'C', 'D', 'E']
+
+print(df)

@@ -1,0 +1,13 @@
+import pandas as pd
+
+data = {
+    'Name': ['Antonio', 'Bale, 'Cristiano'],
+    'Age': [27, 35, 39],
+    'City': ['Madrid, 'Los Blancos', 'Catalanta']
+}
+
+df = pd.DataFrame(data)
+
+df.to_excel('data.xlsx', index=False)
+
+print("Data has been written to 'data.xlsx'")

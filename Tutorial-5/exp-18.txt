@@ -1,0 +1,40 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('weather9099.csv')
+
+# 1. Print the first 10 rows of weather data
+print("First 10 rows of weather data:")
+print(df.head(10))
+
+# 2. Find the maximum and minimum temperature
+max_temperature = df['temperature'].max()
+min_temperature = df['temperature'].min()
+print(f"\nMaximum Temperature: {max_temperature}°C")
+print(f"Minimum Temperature: {min_temperature}°C")
+
+# 3. List the places with temperature less than 28°C
+places_below_28 = df[df['temperature'] < 28]['place']
+print("\nPlaces with temperature less than 28°C:")
+print(places_below_28)
+
+# 4. List the places with weather = "Cloudy"
+cloudy_places = df[df['weather'] == 'Cloudy']['place']
+print("\nPlaces with 'Cloudy' weather:")
+print(cloudy_places)
+
+# 5. Sort and display each weather and its frequency
+weather_frequency = df['weather'].value_counts().reset_index()
+weather_frequency.columns = ['weather', 'frequency']
+print("\nWeather frequency:")
+print(weather_frequency)
+
+# 6. Create a bar plot to visualize temperature of each day
+plt.figure(figsize=(10, 5))
+plt.bar(df['date'], df['temperature'], color='skyblue', edgecolor='black')
+plt.title('Temperature of Each Day')
+plt.xlabel('Date')
+plt.ylabel('Temperature (°C)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()

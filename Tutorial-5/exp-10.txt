@@ -1,0 +1,72 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'rollno': [1, 2, 3, 4],
+    'name': ['Kante', 'Benzema', 'Harry', 'Degea'],
+    'place': ['Chelsea, 'Real', 'Totenham', 'United'],
+    'mark': [55, 92, 88, 98]
+}
+df = pd.DataFrame(data)
+df.to_csv('stud.csv', index=False)
+
+print("CSV file 'stud.csv' created successfully.")
+
+# Step 2: Read and display the file contents
+df = pd.read_csv('stud.csv')
+print("\nFile contents:")
+print(df)
+
+# a) Set rollno as index
+df.set_index('rollno', inplace=True)
+print("\nFile with rollno as index:")
+print(df)
+
+# b) Display name and mark
+print("\nName and mark:")
+print(df[['name', 'mark']])
+
+# c) rollno, name, and mark in the order of name
+sorted_by_name = df.sort_values(by='name')
+print("\nSorted by name (rollno, name, mark):")
+print(sorted_by_name[['name', 'mark']])
+
+# d) Display rollno, name, mark in descending order of mark
+sorted_by_mark_desc = df.sort_values(by='mark', ascending=False)
+print("\nSorted by descending order of mark (rollno, name, mark):")
+print(sorted_by_mark_desc[['name', 'mark']])
+
+# e) Find average mark, median, and mode
+average_mark = df['mark'].mean()
+median_mark = df['mark'].median()
+mode_mark = df['mark'].mode()[0]
+print("\nStatistics:")
+print(f"Average Mark: {average_mark}")
+print(f"Median Mark: {median_mark}")
+print(f"Mode Mark: {mode_mark}")
+
+# f) Find minimum and maximum marks
+min_mark = df['mark'].min()
+max_mark = df['mark'].max()
+print("\nMinimum and Maximum Marks:")
+print(f"Minimum Mark: {min_mark}")
+print(f"Maximum Mark: {max_mark}")
+
+# g) Variance and Standard Deviation of marks
+variance_mark = df['mark'].var()
+std_dev_mark = df['mark'].std()
+print("\nVariance and Standard Deviation:")
+print(f"Variance: {variance_mark}")
+print(f"Standard Deviation: {std_dev_mark}")
+
+# h) Display the histogram of marks
+plt.hist(df['mark'], bins=5, color='green, edgecolor='white')
+plt.title('Histogram of Marks')
+plt.xlabel('Marks')
+plt.ylabel('Frequency')
+plt.show()
+
+# i) Remove the place column
+df_without_place = df.drop(columns=['place'])
+print("\nData after removing 'place' column:")
+print(df_without_place)

@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {
+    'Name': ['Kane', 'Vardy', 'Zlatan'],
+    'Age': [28, 31, 39],
+    'City': ['Bayern', 'Leicester', 'Psg']
+}
+
+df = pd.DataFrame(data)
+
+print("DataFrame created from dictionary:")
+print(df)

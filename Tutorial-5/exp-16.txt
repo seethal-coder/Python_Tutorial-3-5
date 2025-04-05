@@ -1,0 +1,26 @@
+import numpy as np
+
+
+array1 = np.random.randint(0, 20, (3, 3))
+array2 = np.random.randint(0, 20, (3, 3))
+
+addition_result = array1 + array2
+
+multiplication_result = np.dot(array1, array2)
+
+transpose_result = multiplication_result.T
+
+print("Array 1:")
+print(array1)
+
+print("\nArray 2:")
+print(array2)
+
+print("\nMatrix Addition Result:")
+print(addition_result)
+
+print("\nMatrix Multiplication Result:")
+print(multiplication_result)
+
+print("\nTranspose of the Product Matrix:")
+print(transpose_result)

@@ -1,0 +1,15 @@
+import csv
+
+# Data to be written to the CSV file
+data = [
+    ['Reg_no', 'Name', 'Sub_Mark1', 'Sub_Mark2', 'Sub_Mark3'],
+    [101, 'James', 66, 98, 56],
+    [102, 'Jordan', 47, 82, 69],
+    [103, 'Felix', 84, 74, 80]
+]
+
+with open('students.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+
+print("Data has been written to 'students.csv'")
